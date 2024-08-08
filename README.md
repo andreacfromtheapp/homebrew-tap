@@ -1,7 +1,7 @@
 # homebrew-tap
 
-testing out homebrew-tap with cargo-dist
+Homebrew tap for my Rust apps. 🦀
 
-this will eventually hold my rust apps on homebrew.
+Magic happening thanks to [cargo-dist](https://opensource.axo.dev/cargo-dist/). 🦄
 
-isn't ~life~ rust amazing?
+Isn't Rust amazing? 😻
