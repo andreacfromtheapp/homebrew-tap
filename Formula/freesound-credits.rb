@@ -1,21 +1,21 @@
 class FreesoundCredits < Formula
   desc "A simple command line utility to credit Freesound samples in a usable markdown file"
   homepage "https://gacallea.github.io/apps/freesound-credits"
-  version "0.2.14"
+  version "0.2.15"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/gacallea/freesound-credits/releases/download/v0.2.14/freesound-credits-aarch64-apple-darwin.zip"
-      sha256 "6e81412ef4bb58d77492b098d48705f1531b82b24faf7dda842ef339a0d1fe44"
+      url "https://github.com/gacallea/freesound-credits/releases/download/v0.2.15/freesound-credits-aarch64-apple-darwin.zip"
+      sha256 "bc7082d28c8434e70f2565dc2a64eda1cb43d5f5b686230dd754c06118ebfed3"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gacallea/freesound-credits/releases/download/v0.2.14/freesound-credits-x86_64-apple-darwin.zip"
-      sha256 "5593d0b997d5daa105d3b803d67390699265341eab2b44e0c60262fe8ac67971"
+      url "https://github.com/gacallea/freesound-credits/releases/download/v0.2.15/freesound-credits-x86_64-apple-darwin.zip"
+      sha256 "6a26ed4681e81edb3dc0f832bd3ab185e0a0ea97218645ebd825ce8a3fdcb5a0"
     end
   end
   if OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/gacallea/freesound-credits/releases/download/v0.2.14/freesound-credits-x86_64-unknown-linux-gnu.zip"
-      sha256 "135dab32f222ab49473004c4e0cc22900b43a60ec4e31e62cf0c12c3e709f08f"
+      url "https://github.com/gacallea/freesound-credits/releases/download/v0.2.15/freesound-credits-x86_64-unknown-linux-gnu.zip"
+      sha256 "6a3132c78c03b9e7dc2734d65c80acc66ecfa62fe0ea2c108704a17c10d729a0"
     end
   end
   license "MIT OR Apache-2.0"
