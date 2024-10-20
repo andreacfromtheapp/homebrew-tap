@@ -1,26 +1,32 @@
 class FreesoundCredits < Formula
   desc "A simple command line utility to credit Freesound samples in a usable markdown file"
-  homepage "https://gacallea.github.io/apps/freesound-credits"
-  version "0.2.17"
+  homepage "https://andreacfromtheapp.github.io/apps/freesound-credits"
+  version "0.2.19"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/gacallea/freesound-credits/releases/download/v0.2.17/freesound-credits-aarch64-apple-darwin.zip"
-      sha256 "88d95522733143c04f866378d08e57aad55d16ed0f139c76565f23fec39d88ba"
+      url "https://github.com/andreacfromtheapp/freesound-credits/releases/download/v0.2.19/freesound-credits-aarch64-apple-darwin.zip"
+      sha256 "35831bf01a2bccc7124580c616f100661ea82acc096b062993f66fe13ecf71d4"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gacallea/freesound-credits/releases/download/v0.2.17/freesound-credits-x86_64-apple-darwin.zip"
-      sha256 "4a047c90ec156da532099aa408140dd507865425ba36ed1889cc842cf93a5a64"
+      url "https://github.com/andreacfromtheapp/freesound-credits/releases/download/v0.2.19/freesound-credits-x86_64-apple-darwin.zip"
+      sha256 "d61c6240a8a6794bd2571e140af57c3d98aca92987b8136ff22f4c2bfcf844ce"
     end
   end
-  if OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/gacallea/freesound-credits/releases/download/v0.2.17/freesound-credits-x86_64-unknown-linux-gnu.zip"
-      sha256 "175b2b619fc62c2e0da7715b6387f0252d8d1421235ff4e11fe8ec7acb056be5"
-    end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/andreacfromtheapp/freesound-credits/releases/download/v0.2.19/freesound-credits-x86_64-unknown-linux-gnu.zip"
+    sha256 "968aa9871df5b7a3ada7116fc7300fc5168bcbe1cd03deb594190f8c6cde8e32"
   end
-  license "MIT OR Apache-2.0"
+  license any_of: ["MIT", "Apache-2.0"]
 
-  BINARY_ALIASES = {"aarch64-apple-darwin": {}, "aarch64-pc-windows-gnu": {}, "x86_64-apple-darwin": {}, "x86_64-pc-windows-gnu": {}, "x86_64-unknown-linux-gnu": {}, "x86_64-unknown-linux-musl-dynamic": {}, "x86_64-unknown-linux-musl-static": {}}
+  BINARY_ALIASES = {
+    "aarch64-apple-darwin":              {},
+    "aarch64-pc-windows-gnu":            {},
+    "x86_64-apple-darwin":               {},
+    "x86_64-pc-windows-gnu":             {},
+    "x86_64-unknown-linux-gnu":          {},
+    "x86_64-unknown-linux-musl-dynamic": {},
+    "x86_64-unknown-linux-musl-static":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -38,15 +44,9 @@ class FreesoundCredits < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "freesound-credits"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "freesound-credits"
-    end
-    if OS.linux? && Hardware::CPU.intel?
-      bin.install "freesound-credits"
-    end
+    bin.install "freesound-credits" if OS.mac? && Hardware::CPU.arm?
+    bin.install "freesound-credits" if OS.mac? && Hardware::CPU.intel?
+    bin.install "freesound-credits" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
