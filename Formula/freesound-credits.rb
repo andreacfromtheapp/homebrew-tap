@@ -1,20 +1,20 @@
 class FreesoundCredits < Formula
   desc "A simple command line utility to credit Freesound samples in a usable markdown file"
   homepage "https://andreacfromtheapp.github.io/apps/freesound-credits"
-  version "0.2.23"
+  version "0.2.24"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/andreacfromtheapp/freesound-credits/releases/download/v0.2.23/freesound-credits-aarch64-apple-darwin.zip"
-      sha256 "8595681907ccbe89c45f7e7203ba9ffad48f46432750e99c46563b93057bbc48"
+      url "https://github.com/andreacfromtheapp/freesound-credits/releases/download/v0.2.24/freesound-credits-aarch64-apple-darwin.zip"
+      sha256 "91b934ad60cbd5b6009b7f30cad05dc03a6ef608967578b612c0f15e70d2cbec"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/andreacfromtheapp/freesound-credits/releases/download/v0.2.23/freesound-credits-x86_64-apple-darwin.zip"
-      sha256 "c9be507a2514d78a5d89ef1e0cadc9dc3488334867b0e65777a42974a58a891c"
+      url "https://github.com/andreacfromtheapp/freesound-credits/releases/download/v0.2.24/freesound-credits-x86_64-apple-darwin.zip"
+      sha256 "656f7649b2a91830c508e9575456ce67492e1dd825859e40d557a5ec8d7d1a6c"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/andreacfromtheapp/freesound-credits/releases/download/v0.2.23/freesound-credits-x86_64-unknown-linux-gnu.zip"
-    sha256 "8b2cddd52693750ebf886abf07bcf30f168d08092390132a94edafeb50343b1b"
+    url "https://github.com/andreacfromtheapp/freesound-credits/releases/download/v0.2.24/freesound-credits-x86_64-unknown-linux-gnu.zip"
+    sha256 "a0d0f2ad48947bcad02d49dad108375618e02b60d7581c09057ee9bb0359c684"
   end
   license "Apache-2.0"
 
